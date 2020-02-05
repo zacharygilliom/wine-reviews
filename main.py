@@ -9,12 +9,15 @@ def summary(df):
 	print(df.head())
 	print(df.columns)
 	print(df.describe())
+	print('************ data types ************')
 	print(df.dtypes)
+	print('************ Count of each column ************')
 	print(df.count())
+	print('************ Count of NA Values ************')
 	print(df.isna().sum())
-	print('The Number of Unique Items in Each Column')
+	print('***** The Number of Unique Items in Each Column *****')
 	for col in df.columns:
-		print(str(col) + ':' + str(np.count_nonzero(df[col].unique())))
+		print(str(col) + ':\n' + str(np.count_nonzero(df[col].unique())) + '\n')
 
 
 df = pd.read_csv('winemag-data-130k-v2.csv')
